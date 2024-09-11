@@ -6,9 +6,9 @@ const destroyButton = document.querySelector('button[data-destroy]');
 const input = document.querySelector('input');
 
 function getRandomHexColor() {
-  return '#${Math.floor(Math.random() * 16777215)
+  return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}';
+    .padStart(6, 0)}`;
 }
 
 const createBoxes = amount => {
@@ -19,7 +19,7 @@ const createBoxes = amount => {
     let size = { width: 30, height: 30 };
     for (let step = 0; step < amount; step++) {
       let color = getRandomHexColor();
-      elements += '<div style='background-color:${color}; width:${size.width}px; height:${size.height}px'></div>';
+      elements += `<div style='background-color:${color}; width:${size.width}px; height:${size.height}px'></div>`;
       size.height += 10;
       size.width += 10;
     }
